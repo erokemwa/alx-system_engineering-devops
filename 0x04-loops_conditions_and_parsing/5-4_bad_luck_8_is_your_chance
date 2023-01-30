@@ -3,11 +3,11 @@
 #displaying bad luck for the 4th loop, good luck
 #for the 8th loop and best school for the other loops
 var=0
-while [ "$var" -ne 10 ];
+while ((var < 10))
 do
-    if [ "$var" -eq 3 ]; then
+    if ((var == 3)); then
         echo bad luck
-    elif [ "$var" -eq 7 ]; then
+    elif ((var == 7)); then
         echo good luck
     else
         echo Best School
