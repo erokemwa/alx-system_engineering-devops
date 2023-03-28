@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Replace the default Nginx configuration with our custom configuration
+sudo sed -i 's|server_name _;|server_name fxtheory.tech;\n\n    location /redirect_me {\n        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n    }\n\n    # ...|g' /etc/nginx/sites-available/default
+
+# Restart Nginx to apply the changes
+sudo service nginx restart
