@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Script that sets the port 80
+
+# remove existing file
+sudo rm /etc/nginx/sites-enabled/default
+
+# link the deault file in sites available with sites enabled
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+
+# restart nginx
+sudo service nginx restart
