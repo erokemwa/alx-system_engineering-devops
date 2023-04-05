@@ -13,8 +13,8 @@ frontend http-in
 
 backend servers
         balance roundrobin
-        server web-01 54.144.221.234:80 check
-        server web-02 100.26.154.245:80 check
+        server web-01 100.26.142.218:80 check
+        server web-02 100.26.174.154:80 check
 EOT
 
 # start HAProxy
