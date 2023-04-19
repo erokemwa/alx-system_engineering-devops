@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#a Bash script that configures the container to fit the above requirements
 sudo service nginx stop
 sudo pkill apache2
 
