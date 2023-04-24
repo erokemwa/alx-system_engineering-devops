@@ -50,4 +50,4 @@ if __name__ == "__main__":
 
     # Write the dictionary to a JSON file
     with open(file_name, 'w') as f:
-        json.dump(my_dict, f)
+        json.dump(_dict, f)
