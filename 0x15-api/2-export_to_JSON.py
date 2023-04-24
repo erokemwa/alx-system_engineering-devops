@@ -33,7 +33,7 @@ if __name__ == '__main__':
         task_dict["username"] = username
         tasks.append(task_dict)
 
-    # Create a dictionary with the user ID as the key 
+    # Create a dictionary with the user ID
     dictionary = {}
     dictionary[id] = tasks
 
