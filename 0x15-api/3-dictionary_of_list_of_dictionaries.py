@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-Returns to-do list information for all employees.
-"""
+"""Module to fetch to-do list information for"""
 import json
 import requests
 
