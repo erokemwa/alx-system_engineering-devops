@@ -1,18 +1,19 @@
 #!/usr/bin/env bash
 
-# Run nginx as nginx user
-sudo pkill -f apache2
-# This command kills the apache2 process if it is running.
+# Fixes a web server to run Nginx as the nginx user listening on port 8080.
 
-sleep 10
-# This command pauses the script for 10 seconds.
+# Replaces the user in the nginx.conf file with nginx.
+sed -i "s/#user www-data/user nginx/" /etc/nginx/nginx.conf
 
-sudo chmod 777 /etc/nginx/nginx.conf
-# This command changes the permissions of the nginx.conf file to 777.
+# Replaces the port 80 in the default site configuration file with 8080.
+sed -i "s/80/8080/g" /etc/nginx/sites-available/default
 
-sudo sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default
-# This command replaces the port 80 in the default site configuration file with 8080.
+# Changes the permissions of the nginx.conf file to 644.
+chmod 644 /etc/nginx/nginx.conf
 
-sudo -u nginx nginx
-# This command starts nginx as the nginx user.
+# Kills the apache2 process if it is running.
+pkill apache2
+
+# Starts nginx as the nginx user.
+sudo -u nginx service nginx start
 
