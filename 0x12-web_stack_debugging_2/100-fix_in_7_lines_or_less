@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Run nginx as nginx user
+sudo pkill -f apache2
+# This command kills the apache2 process if it is running.
+
+sleep 10
+# This command pauses the script for 10 seconds.
+
+sudo chmod 777 /etc/nginx/nginx.conf
+# This command changes the permissions of the nginx.conf file to 777.
+
+sudo sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default
+# This command replaces the port 80 in the default site configuration file with 8080.
+
+sudo -u nginx nginx
+# This command starts nginx as the nginx user.
+
